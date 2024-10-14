@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+  <label>Độ C</label>
+  <input type="number" id="C" placeholder=" nhập độ C"><br>
+  <button onclick="chuyenDoi()">Chuyển đổi</button>
+</form>
+<script>
+  function chuyenDoi() {
+    let doC = parseFloat(document.getElementById("C").value);
+    let doF = (9 * doC / 5) + 32;
+    alert("ĐỘ F: " + doF);
+  }
+</script>
+</body>
+</html>

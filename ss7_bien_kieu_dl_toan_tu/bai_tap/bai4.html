@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+  <label>Bán kính</label>
+  <input type="number" id="bankinh" placeholder="Nhập bán kính của hình tròn"><br>
+  <button onclick="tinhC()">Tính</button>
+</form>
+<script>
+  function tinhC() {
+    const HANG_SO_PI= 3.1415;
+    let r = parseFloat(document.getElementById("bankinh").value);
+    let chuviC = HANG_SO_PI * r * 2;
+    alert("Diện tích của hình tròn là: " + chuviC);
+  }
+</script>
+</body>
+</html>

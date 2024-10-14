@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+  <label>Điểm Môn Sinh</label>
+  <input type="number" id="Biology" placeholder="Nhập điểm Sinh"><br>
+  <label>Điểm môn Lý</label>
+  <input type="number" id="Physic" placeholder="Nhập điểm Lý"><br>
+  <label>Điểm Môn Hóa</label>
+  <input type="number" id="Chemistry" placeholder="Nhập điểm Hóa"><br>
+  <button onclick="Average()">Tính</button>
+</form>
+<script>
+  function Average(){
+    let toan = parseFloat(document.getElementById("Biology").value);
+    let ly = parseFloat(document.getElementById("Physic").value);
+    let hoa = parseFloat(document.getElementById("Chemistry").value);
+    let tongDiem = toan + ly + hoa;
+    let diemTB = (toan + ly + hoa) / 3;
+    alert("Tổng điểm 3 môn là: " + tongDiem);
+    alert("Điểm trung bình là: " + diemTB);
+  }
+</script>
+</body>
+</html>
