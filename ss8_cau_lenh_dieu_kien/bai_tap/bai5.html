@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let diemKiemTra =+prompt("nhap diem bai kiem tra");
+  let diemGiuaKi =+prompt("nhap diem kt giua ki");
+  let diemCuoiKi =+prompt("nhap diem kt cuoi ki");
+  let diemTongKet = (diemKiemTra + diemGiuaKi*2 + diemCuoiKi*3)/6;
+  if (diemTongKet >=8){
+    console.log("hoc luc gioi: " +diemTongKet);
+  }else if(diemTongKet >=6.5){
+    console.log("hoc luc kha: "+diemTongKet);
+  }else if(diemTongKet>=3.5){
+    console.log("hoc luc trung binh: "+diemTongKet);
+  }else {
+    console.log("hoc luc yeu: "+diemTongKet);
+  }
+</script>
+</body>
+</html>
