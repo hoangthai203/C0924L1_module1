@@ -10,10 +10,10 @@
 <input type="text" name="" id="can_nang"><br>
 <label for="chieu_cao"> Nhập chiều cao:  (m)</label>
 <input type="text" name="" id="chieu_cao"><br>
-<button onclick="kiem_tra()">Kiểm tra</button>
+<button onclick="kiemTra()">Kiểm tra</button>
 <form>
   <script>
-    function kiem_tra() {
+    function kiemTra() {
       let canNang = parseFloat(document.getElementById("can_nang").value);
       let chieuCao = parseFloat(document.getElementById("chieu_cao").value);
       let bmi = canNang/chieuCao;
