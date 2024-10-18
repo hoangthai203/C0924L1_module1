@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let soDien =+prompt("nhap so dien");
+  let cuocPhi =0;
+  let phiDien = 25000;
+  if (soDien <= 50) {
+    cuocPhi = soDien * 600;
+  } else if (soDien <= 200) {
+    cuocPhi = 50 * 600 + (soDien - 50) * 400;
+  } else {
+    cuocPhi = 50 * 600 + 150 * 400 + (soDien - 200) * 200;
+  }
+  let tienDien = phiDien + cuocPhi;
+  console.log("Tổng tiền điện phải trả là: " + tienDien + " VND");
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+ let tienLuong =+prompt("nhap tien luong thu nhap 1 thang");
+ let suatThue = 0;
+ if (tienLuong<=5000000){
+   suatThue = 5/100;
+ }else if(tienLuong>5000000 && tienLuong<=10000000){
+   suatThue = 10/100;
+ }else if(tienLuong>10000000 && tienLuong<=18000000){
+   suatThue = 15/100;
+ }else if(tienLuong>18000000 && tienLuong<=32000000){
+   suatThue = 20/100;
+ }
+ let tienThue = tienLuong * suatThue;
+ console.log("tien thue 1 thang cua ban la: "+tienThue);
+</script>
+</body>
+</html>
