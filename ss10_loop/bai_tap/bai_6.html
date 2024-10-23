@@ -6,17 +6,16 @@
 </head>
 <body>
 <script>
-  let count = 0;
-  let tongSo =0;
-  let a;
-  for (let i=1;i<=30; i++){
-    if(i%7==0){
-      a += i;
-      tongSo += i;
-      count++;
+  let count = 0, tongSo =0, a = " ";
+  for (let i=1;count !== 30; i++) {
+      if (i % 7 === 0) {
+          a += i + " ";
+          tongSo += i;
+          count++;
+      }
   }
+  document.write("day so: " +a + "<br>");
   document.write("Tổng bằng "+tongSo);
-  }
 </script>
 </body>
 </html>
