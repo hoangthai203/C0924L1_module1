@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  kiemMang= true;
+  let size =+ prompt("nhập đọ dài của mảng: ");
+  let array = new Array(size);
+  for (let i = 0; i < array.length; i++) {
+    array[i] = prompt("nhập phần tử thứ : " +i);
+    if(array[i] == "V") {
+      kiemMang =false;
+    }
+  }
+  document.write("Mang vừa nhập là:  " + array + "<br>");
+  if(kiemMang == false) {
+    document.write("V is in the array");
+  }else {
+    document.write("V is not in the array");
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let array = [1,2,-3,4,5,-9,22,3,15,11];
+  let viTri = 0;
+  let max = 0;
+  trungBinhc = 0;
+  for (let i = 1; i < array.length; i++) {
+    if(array[i] > max) {
+      max = array[i];
+      viTri = i;
+    }
+    trungBinhc += array[i];
+  }
+  trungBinhc = trungBinhc/array.length;
+  document.write("Phần tử lớn nhất trong mảng là "+ max + " tại vị trí thứ " + viTri + "</br>");
+  document.write("Tổng trung bình của các số là "+trungBinhc);
+</script>
+</body>
+</html>

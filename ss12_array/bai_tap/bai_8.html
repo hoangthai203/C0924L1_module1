@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  daoMang = 0;
+  let array = [];
+  for (let i = 0; i < 10; i++) {
+    array[i] = prompt("Nhập số vào mảng");
+  }
+  document.write("Mảng là: " + array + "<br>");
+  for (let i = 0; i < array.length - 1; i++) {
+    for (let j = i + 1; j < array.length; j++) {
+      if ( array[i] < array[j]) {
+        daoMang = array[i];
+        array[i] = array[j];
+        array[j] = daoMang;
+      }
+    }
+  }
+  document.write("Xắp xếp mảng từ bé đến lớn: " + array);
+</script>
+</body>
+</html>
