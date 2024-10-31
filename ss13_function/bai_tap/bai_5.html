@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let star1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let star2 = ["Ursa Minor", "Taurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+
+    function check_star(star) {
+        let index_star1 = star1.indexOf(star);
+        if (index_star1 != -1) {
+            return star2[index_star1];
+        } else {
+            return "Không tìm thấy sao";
+        }
+    }
+    let star = prompt("Nhập vào ngôi sao: ");
+    document.write(check_star(star));
+</script>
+</body>
+</html>
