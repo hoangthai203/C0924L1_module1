@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function isTinh(r) {
+    const pi = 3.1415;
+    let C = 2 * pi * r;
+    let S = (C * C) / (4 * pi);
+    document.write("Chu vi hình tròn là: " + C + "<br>");
+    document.write("Diện tích hình tròn là: " + S);
+  }
+  let banKinh = + prompt("nhập bán kính hình tròn: ");
+  isTinh(banKinh);
+</script>
+</body>
+</html>
