@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  // let student1 = {
+  //   //thuoc tinh
+  //   id: 1,
+  //   name: "thai1",
+  //   age: 22,
+  //   // hanh dong => phuong thuc (method)
+  //   study: function (subject) {
+  //     console.log("hoc vien dang hoc mon: " + subject);
+  //   },
+  //   howToGo: function () {
+  //     console.log("di xe may");
+  //   }
+  // }
+  //
+  // let student2 = {
+  //   //thuoc tinh
+  //   id: 1,
+  //   name: "thai2",
+  //   age: 23,
+  //   // hanh dong => phuong thuc (method)
+  //   study: function (subject) {
+  //     console.log("hoc vien dang hoc mon: " + subject);
+  //   },
+  //   howToGo: function () {
+  //     console.log("di xe oto");
+  //   }
+  // }
+  //
+  // console.log(student1.name);
+  // student1.study("toan");
+  //
+  // student2.name = "nguuu";
+  // console.log(student2.name);
+  // student2.howToGo();
+
+  //class => ten clss theo quy tac PascalCase
+  class SinhVien{
+    //  la mot phuong thuc dac biet de khai bao thuoc tinh va khoi tao doi tuong
+    constructor(masv, ten, tuoi) {
+        this.id = masv;
+        this.name = ten;
+        this.age = tuoi;
+    }
+
+    }
+  }
+
+    // sdung function
+// function sinhvien(masv, ten ,tuoi) {
+//   this.id = masv;
+//   this.name = ten;
+//   this.age = tuoi;
+//
+//   this.study = function (subject) {
+//     console.log("hoc vien dang hoc mon: " + subject);
+//   }
+// }
+
+  let sv1 = new SinhVien(1, 'thai1', 21);
+  sv1.study("toan");
+  let sv2 = new SinhVien(2, 'thai2', 22);
+  let sv3 = new SinhVien(3, 'thai3', 23);
+  let sv4 = new SinhVien(4, 'thai4', 24);
+</script>
+</body>
+</html>

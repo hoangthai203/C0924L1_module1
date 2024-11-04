@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  class Rectangle {
+    constructor(length, width) {
+      this.length = length;
+      this.width = width;
+    }
+
+    getLength() {
+        return this.length;
+    }
+    setLength() {
+        this.length = length;
+    }
+      getWidth() {
+          return this.width;
+      }
+      setWidth() {
+          this.width = width;
+      }
+    getPerimeter() {
+        return (this.length + this.width) * 2;
+    }
+    getAcreage() {
+        return this.width * this.length;
+    }
+  }
+  let hinhChuNhat = new Rectangle(10,15);
+  document.write("Chu vi hình chữ nhật là: " + hinhChuNhat.getPerimeter() + "<br>");
+  document.write("Diện tích hình chữ nhật là: " + hinhChuNhat.getAcreage());
+  document.write("<br><canvas id=\"canvasId\" width=width height=length style=\"border:1px solid #c3c3c3;\"></canvas>")
+  let context = document.getElementById("canvasId").getContext("2d")
+
+</script>
+</body>
+</html>
