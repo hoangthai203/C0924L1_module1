@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  class Animal{
+    constructor(name, weight, speed) {
+      this.name = name;
+      this.weight= weight;
+      this.speed = speed;
+    }
+    setName(name){
+      this.name = name;
+    }
+    getName(){
+      return this.name;
+    }
+
+    // phương thức trừu tượng: pht không có phần thân
+    say(text){
+      // chưa biết kiêu như thế nào?
+      // trừ tượng
+    }
+  }
+
+  class Rat extends Animal{
+    constructor(name, weight, speed, status) {
+      super(name,weight,speed);
+      this.status =status;
+    }
+    // ghi đè phương thức
+    say(text) {
+      console.log("chit chit: "+ text)
+    }
+  }
+
+
+
+
+  class Cat extends Animal{
+    constructor(name,weight,speed) {
+      super(name,weight,speed);
+    }
+    say(text) {
+      console.log("meo meo: "+ text)
+    }
+    eat(chuot){
+      if (chuot.status==true){
+        this.say("Còn sống ăn thôi!");
+        this.weight +=chuot.weight;
+      }else {
+        this.say("Chết rồi không ăn");
+      }
+    }
+    catch(chuot){
+      if (this.speed>chuot.speed){
+        this.say("Bắt được rồi");
+        this.eat(chuot);
+      }else {
+        chuot.say("Đố bắt được tao đố: ")
+      }
+    }
+
+  }
+
+  // kích bản bài toán
+
+  let jerry1 = new Rat("Terry",1,5,true);
+  let jerry2 = new Rat("Terry2",1,12,true);
+  let jerry3 = new Rat("Terry2",1,6,false);
+  let tom = new Cat("Tom",10,10);
+
+  tom.catch(jerry1);
+  tom.catch(jerry2);
+  tom.catch(jerry3);
+  console.log(tom.weight);
+
+</script>
+</body>
+</html>
