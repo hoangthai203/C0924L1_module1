@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function find(x) {
+        let regex = /^(\d+)\/(\d+)$/;
+        let match = x.match(regex);
+        if (match) {
+            let numerator = parseInt(match[1]); // tử số
+            let denominator = parseInt(match[2]); // mẫu số
+
+            if (denominator !== 0) {
+                let gcd = function (a, b) {
+                    while (b !== 0) {
+                        let temp = b;
+                        b = a % b;
+                        a = temp;
+                    }
+                    return a;
+                };
+
+                let gcdValue = gcd(numerator, denominator);
+                let simplifiedNumerator = numerator / gcdValue;
+                let simplifiedDenominator = denominator / gcdValue;
+
+                return simplifiedNumerator + '/' + simplifiedDenominator;
+            } else {
+                return "Mẫu số không thể bằng 0";
+            }
+        } else {
+            return "Không phải là phân số";
+        }
+    }
+
+    console.log(find("1/2"));
+    console.log(find("12/48"));
+    console.log(find("123"));
+    console.log(find("12/a11"));
+    console.log(find("0/1"));
+</script>
+</body>
+</html>
