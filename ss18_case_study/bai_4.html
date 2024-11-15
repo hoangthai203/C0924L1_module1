@@ -1,46 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bai_4</title>
 </head>
 <body>
 <script>
+    let phanSo = +prompt("nhập phân số");
+    find(phanSo);
     function find(x) {
-        let regex = /^(\d+)\/(\d+)$/;
-        let match = x.match(regex);
-        if (match) {
-            let numerator = parseInt(match[1]); // tử số
-            let denominator = parseInt(match[2]); // mẫu số
+        // kiểm x có phải là phần số /yy/aa
 
-            if (denominator !== 0) {
-                let gcd = function (a, b) {
-                    while (b !== 0) {
-                        let temp = b;
-                        b = a % b;
-                        a = temp;
-                    }
-                    return a;
-                };
+        let mang = x.split("/");
+        alert(mang);
 
-                let gcdValue = gcd(numerator, denominator);
-                let simplifiedNumerator = numerator / gcdValue;
-                let simplifiedDenominator = denominator / gcdValue;
-
-                return simplifiedNumerator + '/' + simplifiedDenominator;
-            } else {
-                return "Mẫu số không thể bằng 0";
+        if (mang.length==2){
+            let tu = mang[0];
+            let mau = mang[1];
+            if (tu%1==0 && mau%1==0&&mau!=0){
+                alert("ok")
+            }else {
+                alert("not")
             }
-        } else {
-            return "Không phải là phân số";
+        }else {
+            alert("not")
         }
-    }
 
-    console.log(find("1/2"));
-    console.log(find("12/48"));
-    console.log(find("123"));
-    console.log(find("12/a11"));
-    console.log(find("0/1"));
+    }
 </script>
 </body>
 </html>

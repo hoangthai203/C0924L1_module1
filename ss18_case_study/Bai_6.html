@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Check Array</title>
+</head>
+<body>
+<script>
+    function checkArray(array) {
+        let isAllEven = true;
+        let isAllOdd = true;
+
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] % 2 === 0) {
+                isAllOdd = false;
+            } else {
+                isAllEven = false;
+            }
+        }
+
+        if (isAllEven) {
+            return 1;
+        } else if (isAllOdd) {
+            return 0;
+        } else {
+            return -1;
+        }
+    }
+
+    console.log(checkArray([0, 2, 8, 12, 4]));
+    console.log(checkArray([1, 7, 3, 11]));
+    console.log(checkArray([1, 2, 9, 4]));
+</script>
+</body>
+</html>
