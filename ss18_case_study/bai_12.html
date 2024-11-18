@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý học viên</title>
+</head>
+<body>
+<h2>Quản lý học viên</h2>
+<input id="code" placeholder="Nhập mã học viên (HV-XXXX)">
+<input id="name" placeholder="Nhập tên học viên">
+<input id="class" placeholder="Nhập lớp học">
+<input id="email" placeholder="Nhập email">
+<input id="birthdate" placeholder="Nhập ngày sinh (dd/mm/yyyy)">
+<input id="module" placeholder="Nhập module (1-6)">
+<button onclick="addStudent()">Thêm mới</button><br>
+<span>Số lượng học viên: </span><span id="studentCount"></span>
+<p id="result"></p>
+
+<script>
+    class Student {
+        constructor(code, name, studentClass, email, birthdate, module) {
+            this.code = code;
+            this.name = name;
+            this.studentClass = studentClass;
+            this.email = email;
+            this.birthdate = birthdate;
+            this.module = module;
+        }
+    }
+
+    let studentList = [
+        new Student("HV-0001", "Nguyễn Văn A", "C0924L1", "vana@gmail.com", "01/01/2000", 1),
+        new Student("HV-0002", "Nguyễn Văn B", "C1024L1", "vanb@gmail.com", "02/02/2000", 2)
+    ];
+
+    display();
+
+    function addStudent() {
+        let code = document.getElementById("code").value.trim();
+        let name = document.getElementById("name").value.trim();
+        let studentClass = document.getElementById("class").value.trim();
+        let email = document.getElementById("email").value.trim();
+        let birthdate = document.getElementById("birthdate").value.trim();
+        let module = parseInt(document.getElementById("module").value.trim());
+
+        if (!/^HV-\d{4}$/.test(code)) {
+            alert("Mã học viên phải đúng định dạng HV-XXXX.");
+            return;
+        }
+
+        if (name === '') {
+            alert("Tên học viên không được để trống.");
+            return;
+        }
+
+        let newStudent = new Student(code, name, studentClass, email, birthdate, module);
+        studentList.push(newStudent);
+
+        alert(`Thêm mới học viên "${name}" thành công!`);
+
+
+        document.getElementById("code").value = '';
+        document.getElementById("name").value = '';
+        document.getElementById("class").value = '';
+        document.getElementById("email").value = '';
+        document.getElementById("birthdate").value = '';
+        document.getElementById("module").value = '';
+        display();
+    }
+
+    function display() {
+        let tableHTML = `
+                <table border="1">
+                    <tr>
+                        <th>STT</th>
+                        <th>Mã học viên</th>
+                        <th>Tên</th>
+                        <th>Lớp</th>
+                        <th>Email</th>
+                        <th>Ngày sinh</th>
+                        <th>Module</th>
+                        <th>Chỉnh sửa</th>
+                        <th>Xóa</th>
+                    </tr>
+            `;
+
+        for (let i = 0; i < studentList.length; i++) {
+            tableHTML += `
+                    <tr>
+                        <td>${i + 1}</td>
+                        <td>${studentList[i].code}</td>
+                        <td>${studentList[i].name}</td>
+                        <td>${studentList[i].studentClass}</td>
+                        <td>${studentList[i].email}</td>
+                        <td>${studentList[i].birthdate}</td>
+                        <td>${studentList[i].module}</td>
+                        <td><button onclick="updateStudent(${i})">Chỉnh sửa</button></td>
+                        <td><button onclick="deleteStudent(${i})">Xóa</button></td>
+                    </tr>
+                `;
+        }
+
+        tableHTML += `</table>`;
+        document.getElementById("result").innerHTML = tableHTML;
+        document.getElementById("studentCount").innerText = studentList.length;
+    }
+
+    function deleteStudent(index) {
+        let confirmDelete = confirm("Bạn có chắc chắn muốn xóa học viên này?");
+        if (confirmDelete) {
+            studentList.splice(index, 1);
+            display();
+        }
+    }
+
+    function updateStudent(index) {
+        let code = prompt("Nhập mã học viên mới:");
+        let name = prompt("Nhập tên học viên mới:");
+        let studentClass = prompt("Nhập lớp học mới:");
+        let email = prompt("Nhập email mới:");
+        let birthdate = prompt("Nhập ngày sinh mới (dd/mm/yyyy):");
+
+        if (!/^HV-\d{4}$/.test(code) || name === '') {
+            alert("Thông tin không hợp lệ. Cập nhật thất bại.");
+            return;
+        }
+
+        studentList[index] = new Student(code, name, studentClass, email, birthdate, module);
+        display();
+    }
+</script>
+</body>
+</html>
