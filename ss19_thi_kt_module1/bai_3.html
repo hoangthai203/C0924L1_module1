@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let input = prompt("Nhập tháng/năm (định dạng MM/yyyy):");
+
+    function calculateDays(x) {
+        let mang = x.split("/");
+
+        if (mang.length === 2) {
+            let month = mang[0];
+            let year = mang[1];
+
+            if (month % 1 === 0 && year % 1 === 0 && month >= 1 && month <= 12 && year > 0) {
+                month = Number(month);
+                year = Number(year);
+
+                let days;
+                if (month === 2) {
+                    days = isLeapYear(year) ? 29 : 28;
+                } else if (month === 4 || month === 6 || month === 9 || month === 11) {
+                    days = 30;
+                } else {
+                    days = 31;
+                }
+                alert(`Số ngày trong tháng ${month}/${year} là: ${days}`);
+            } else {
+                alert("Tháng hoặc năm không hợp lệ!");
+            }
+        } else {
+            alert("Định dạng nhập không hợp lệ! Vui lòng nhập MM/yyyy.");
+        }
+    }
+
+    function isLeapYear(year) {
+        return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+    }
+
+    calculateDays(input);
+</script>
+</body>
+</html>
